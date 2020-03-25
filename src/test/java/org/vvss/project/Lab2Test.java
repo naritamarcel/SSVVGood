@@ -19,7 +19,7 @@ public class Lab2Test
 
     @Before
     public void init(){
-        StudentRepo rep = new StudentRepo(new StudentValidator(), "studenti.xml");
+        StudentRepo rep = new StudentRepo(new StudentValidator(), "assignmenti.xml");
         serviceStudent = new ServiceStudent(rep);
     }
 

@@ -22,7 +22,7 @@ public class TestStudentWBT {
 
     @Before
     public void init(){
-        repo = new StudentRepo(new StudentValidator(), "studenti.xml");
+        repo = new StudentRepo(new StudentValidator(), "assignmenti.xml");
         serviceStudent = new ServiceStudent(repo);
     }
 
@@ -54,9 +54,9 @@ public class TestStudentWBT {
 
     @After
     public void clearTests() {
-        Iterator<Student> studentIterator = serviceStudent.all().iterator();
-        List<Student> studentList = new ArrayList<>();
-        studentIterator.forEachRemaining(studentList::add);
-        studentList.forEach(student -> serviceStudent.del(student.getID()));
+        Iterator<Student> assignmentIterator = serviceStudent.all().iterator();
+        List<Student> assignmentList = new ArrayList<>();
+        assignmentIterator.forEachRemaining(assignmentList::add);
+        assignmentList.forEach(assignment -> serviceStudent.del(assignment.getID()));
     }
 }
