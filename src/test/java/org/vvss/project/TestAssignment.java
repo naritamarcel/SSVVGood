@@ -3,10 +3,10 @@ package org.vvss.project;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.vvss.project.Domain.Student;
-import org.vvss.project.Repository.StudentRepo;
-import org.vvss.project.Service.ServiceStudent;
-import org.vvss.project.Validator.StudentValidator;
+import org.vvss.project.Domain.Teme;
+import org.vvss.project.Repository.TemeRepo;
+import org.vvss.project.Service.ServiceTeme;
+import org.vvss.project.Validator.TemeValidator;
 import org.vvss.project.Validator.ValidationException;
 
 import java.util.ArrayList;
@@ -18,135 +18,148 @@ import static org.junit.Assert.assertNull;
 
 public class TestAssignment {
 
-    ServiceStudent serviceStudent;
+    ///Homework lab3WBT
+
+    ServiceTeme serviceTeme;
 
     @Before
-    public void init(){
-        StudentRepo rep = new StudentRepo(new StudentValidator(), "assignment_test.xml");
-        serviceStudent = new ServiceStudent(rep);
+    public void init() {
+        TemeRepo rep = new TemeRepo(new TemeValidator(), "assignment_test.xml");
+        serviceTeme = new ServiceTeme(rep);
     }
 
     @Test
-    public void testAddStudentValid() {
-        Student stud = new Student("67", "Merceee", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("67"));
-        serviceStudent.add(stud);
-        assertNotNull(serviceStudent.find("67"));
+    public void testAssignmentValid() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = 3;
+        Teme t = new Teme(1, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(1));
+        serviceTeme.add(t);
+        assertNotNull(serviceTeme.find(1));
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentIdNull() {
-
-        Student stud = new Student(null, "Merceee", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        serviceStudent.add(stud);
+    public void testAssignmentIdNull() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = 3;
+        Teme t = new Teme(null, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(null));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentIdEmpty() {
-        String id = "";
-        Student stud = new Student(id, "Merceee", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find(id));
-        serviceStudent.add(stud);
+    public void testAssignmentIdSmallerThan1() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = 3;
+        Teme t = new Teme(-2, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(-1));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentIdNegative() {
-
-        Student stud = new Student("-2", "Merceee", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("-2"));
-        serviceStudent.add(stud);
+    public void testDeadlineWeekBiggerThan14() {
+        Integer deadlineWeek = 15;
+        Integer deliverWeek = 3;
+        Teme t = new Teme(2, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(2));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentIdNaN() {
-        String id = "not";
-        Student stud = new Student(id, "Merceee", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find(id));
-        serviceStudent.add(stud);
+    public void testDeadlineWeekSmallerThan1() {
+        Integer deadlineWeek = -1;
+        Integer deliverWeek = 3;
+        Teme t = new Teme(2, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(2));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentNameNotValid() {
-        Student stud = new Student("35", ":;;:", 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void testAddStudentNameNull() {
-        Student stud = new Student("35", null, 935, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
+    public void testDeadlineWeekSmallerThanDeliverWeek() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = 13;
+        Teme t = new Teme(3, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(3));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentGroupNegativeNumber() {
-        Student stud = new Student("35", "Merceee", -2, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
+    public void testDeliverWeekBiggerThan14() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = 15;
+        Teme t = new Teme(3, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(3));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentGroupInvalid() {
-        Student stud = new Student("35", "Merceee", 11, "nrt@scs.ubbcluj.com", "Teacher");
-
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
+    public void testDeliverWeekSmallerThan1() {
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = -1;
+        Teme t = new Teme(3, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(3));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentEmailInvalid() {
-        Student stud = new Student("35", "Merceee", 935, "ii", "Teacher");
-
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void addStudentEmailNull() {
-        Student stud = new Student("35", "Merceee", 935, null, "Teacher");
-        assertNull(serviceStudent.find("35"));
-        serviceStudent.add(stud);
+    public void testDescriptionNull() {
+        Integer deadlineWeek = 4;
+        Teme t = new Teme(3, null, 1, deadlineWeek);
+        assertNull(serviceTeme.find(3));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void testAddStudentEmailEmpty() {
-
-        Student stud = new Student("67", "Merceee", 935, "", "Teacher");
-        assertNull(serviceStudent.find("67"));
-        serviceStudent.add(stud);
+    public void testEmptyDescription() {
+        Integer deadlineWeek = 4;
+        Teme t = new Teme(3, "", 1, deadlineWeek);
+        assertNull(serviceTeme.find(3));
+        serviceTeme.add(t);
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentProfessorEmpty() {
-
-        Student stud = new Student("67", "Merceee", 935, "nrt@scs.ubbcluj.com", "");
-        assertNull(serviceStudent.find("67"));
-        serviceStudent.add(stud);
+    public void testIdDeadlineInvalid() {
+        Integer id = null;
+        Integer deadlineWeek = -4;
+        Teme t = new Teme(id, "description", 1, deadlineWeek);
+        assertNull(serviceTeme.find(id));
+        serviceTeme.add(t);
     }
 
-    @Test(expected = NullPointerException.class)
-    public void addStudentProfessorNull() {
+    @Test(expected = ValidationException.class)
+    public void testIdDeliverInvalid() {
+        Integer id = null;
+        Integer deadlineWeek = 4;
+        Integer deliverWeek = -1;
+        Teme t = new Teme(id, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(id));
+        serviceTeme.add(t);
+    }
 
-        Student stud = new Student("67", "Merceee", 935, "nrt@scs.ubbcluj.com", null);
+    @Test(expected = ValidationException.class)
+    public void testDeadlineDeliverInvalid() {
+        Integer deadlineWeek = -4;
+        Integer deliverWeek = -1;
+        Teme t = new Teme(1, "description", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(1));
+        serviceTeme.add(t);
+    }
 
-        assertNull(serviceStudent.find("67"));
-        serviceStudent.add(stud);
+    @Test(expected = ValidationException.class)
+    public void testAllInvalid() {
+        Integer id = null;
+        Integer deadlineWeek = -4;
+        Integer deliverWeek = -1;
+        Teme t = new Teme(id, "", deliverWeek, deadlineWeek);
+        assertNull(serviceTeme.find(id));
+        serviceTeme.add(t);
     }
 
     @After
     public void clearTests() {
-        Iterator<Student> assignmentIterator = serviceStudent.all().iterator();
-        List<Student> assignmentList = new ArrayList<>();
-        assignmentIterator.forEachRemaining(assignmentList::add);
-        assignmentList.forEach(assignment -> serviceStudent.del(assignment.getID()));
+        Iterator<Teme> iterator = serviceTeme.all().iterator();
+        List<Teme> assignList = new ArrayList<>();
+        iterator.forEachRemaining(assignList::add);
+        assignList.forEach(assign -> serviceTeme.del(assign.getID()));
     }
 }
