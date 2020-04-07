@@ -148,9 +148,7 @@ public class TestAssignment {
     @Test(expected = ValidationException.class)
     public void testAllInvalid() {
         Integer id = null;
-        Integer deadlineWeek = -4;
-        Integer deliverWeek = -1;
-        Teme t = new Teme(id, "", deliverWeek, deadlineWeek);
+        Teme t = new Teme(id, "", 7, 4);
         assertNull(serviceTeme.find(id));
         serviceTeme.add(t);
     }

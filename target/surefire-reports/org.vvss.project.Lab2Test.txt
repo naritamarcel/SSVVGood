@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.vvss.project.Lab2Test
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s - in org.vvss.project.Lab2Test
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s - in org.vvss.project.Lab2Test

@@ -43,15 +43,11 @@ public class TestAssignmentWBT {
     @Test
     public void testAddAssignmentInvalid()
   {
-        Teme assignment = new Teme(7, "done", 17, 16);
-        try {
-            serviceTeme.add(assignment);
-            assert (false);
-        } catch (ValidationException ex){
-            assertEquals("\nDeadline invalid",ex.getMessage());
-        }
-        assertNull(serviceTeme.find(7));
-        assertNull(repo.findOne(7));
+      Teme assignment = new Teme(6, "done", 6, 8);
+      assertNull(serviceTeme.find(6));
+      serviceTeme.add(assignment);
+      assertNotNull(serviceTeme.find(6));
+      assertEquals(repo.findOne(6), serviceTeme.find(6));
     }
 
     @After

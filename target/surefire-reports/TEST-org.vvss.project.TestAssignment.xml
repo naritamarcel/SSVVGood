@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.vvss.project.TestAssignment" time="0.024" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.vvss.project.TestAssignment" time="0.021" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RO"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter2322299127078207770.jar /Users/marcel/SSVVGood/target/surefire 2020-03-25T12-07-46_042-jvmRun1 surefire14498479264153297669tmp surefire_010630541273330156348tmp"/>
+    <property name="sun.java.command" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter9883793646031014037.jar /Users/marcel/SSVVGood/target/surefire 2020-04-07T18-20-15_350-jvmRun1 surefire6249413828718173610tmp surefire_014396881594292359226tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/marcel/SSVVGood/target/test-classes:/Users/marcel/SSVVGood/target/classes:/Users/marcel/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/marcel/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="idea.version2019.2.3" value="true"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter2322299127078207770.jar"/>
+    <property name="surefire.real.class.path" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter9883793646031014037.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.1+9"/>
     <property name="user.name" value="marcel"/>
@@ -51,18 +51,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="testAddStudentNameNull" classname="org.vvss.project.TestAssignment" time="0.002"/>
-  <testcase name="testAddStudentGroupNegativeNumber" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="addStudentProfessorNull" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentEmailEmpty" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentIdNegative" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentGroupInvalid" classname="org.vvss.project.TestAssignment" time="0.002"/>
-  <testcase name="addStudentProfessorEmpty" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="addStudentEmailNull" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentIdEmpty" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="addStudentEmailInvalid" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentNameNotValid" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentIdNaN" classname="org.vvss.project.TestAssignment" time="0.001"/>
-  <testcase name="testAddStudentValid" classname="org.vvss.project.TestAssignment" time="0.003"/>
-  <testcase name="testAddStudentIdNull" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testEmptyDescription" classname="org.vvss.project.TestAssignment" time="0.002"/>
+  <testcase name="testIdDeadlineInvalid" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testAssignmentIdNull" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testAllInvalid" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDeadlineDeliverInvalid" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDeadlineWeekSmallerThanDeliverWeek" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDeliverWeekBiggerThan14" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDeadlineWeekBiggerThan14" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testIdDeliverInvalid" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDeliverWeekSmallerThan1" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testAssignmentIdSmallerThan1" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testDescriptionNull" classname="org.vvss.project.TestAssignment" time="0.001"/>
+  <testcase name="testAssignmentValid" classname="org.vvss.project.TestAssignment" time="0.003"/>
+  <testcase name="testDeadlineWeekSmallerThan1" classname="org.vvss.project.TestAssignment" time="0.001"/>
 </testsuite>

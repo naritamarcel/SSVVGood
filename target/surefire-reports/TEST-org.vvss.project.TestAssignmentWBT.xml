@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.vvss.project.TestAssignmentWBT" time="0.014" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.vvss.project.TestAssignmentWBT" time="0.008" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RO"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter2322299127078207770.jar /Users/marcel/SSVVGood/target/surefire 2020-03-25T12-07-46_042-jvmRun1 surefire14498479264153297669tmp surefire_010630541273330156348tmp"/>
+    <property name="sun.java.command" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter9883793646031014037.jar /Users/marcel/SSVVGood/target/surefire 2020-04-07T18-20-15_350-jvmRun1 surefire6249413828718173610tmp surefire_014396881594292359226tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/marcel/SSVVGood/target/test-classes:/Users/marcel/SSVVGood/target/classes:/Users/marcel/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/marcel/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="idea.version2019.2.3" value="true"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter2322299127078207770.jar"/>
+    <property name="surefire.real.class.path" value="/Users/marcel/SSVVGood/target/surefire/surefirebooter9883793646031014037.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.1+9"/>
     <property name="user.name" value="marcel"/>
@@ -51,14 +51,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="testAddAssignment" classname="org.vvss.project.TestAssignmentWBT" time="0.007"/>
-  <testcase name="testAddAssignmentInvalid" classname="org.vvss.project.TestAssignmentWBT" time="0.007">
-    <failure message="expected:&lt;&#10;[Assignment invalid]&gt; but was:&lt;&#10;[Deadline invalid&#10;Saptamana in care tema a fost primita este invalida]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: 
-expected:<
-[Assignment invalid]> but was:<
-[Deadline invalid
-Saptamana in care tema a fost primita este invalida]>
-	at org.vvss.project.TestAssignmentWBT.testAddAssignmentInvalid(TestAssignmentWBT.java:51)
-]]></failure>
-  </testcase>
+  <testcase name="testAddAssignment" classname="org.vvss.project.TestAssignmentWBT" time="0.005"/>
+  <testcase name="testAddAssignmentInvalid" classname="org.vvss.project.TestAssignmentWBT" time="0.003"/>
 </testsuite>
